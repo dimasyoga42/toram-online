@@ -108,8 +108,7 @@ app.get("/xtall/name/:name", async (req, res) => {
 		const { data, error } = await supabase
 			.from("xtall")
 			.select("name, type, upgrade, stat")
-			.ilike("name", `%${name}%`)
-			.single();
+			.ilike("name", `%${name}%`);
 
 		if (error) {
 			if (error.code === "PGRST116") {
