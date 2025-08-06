@@ -6,6 +6,14 @@
 			"use": "@vercel/node"
 		}
 	],
+	"env": {
+		"LINKDATABASE": "https://dpzomyklvfwauezwmdja.supabase.co"
+	},
+	"build": {
+		"env": {
+			"LINKDATABASE": "https://dpzomyklvfwauezwmdja.supabase.co"
+		}
+	},
 	"routes": [
 		{
 			"src": "/(.*)",
