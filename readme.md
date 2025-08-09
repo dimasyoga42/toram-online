@@ -4,6 +4,14 @@ API ini menyediakan akses publik ke data Xtall (Crystal Equipment) dari game Tor
 pencarian berdasarkan nama, ID, dan filter berdasarkan tipe. Data disimpan dan dikelola melalui
 Supabase
 
+```
+update log:
+- 9-08-2025 data xtall senjata, armor, topi sudah lengkap
+- 9-08-2025 data registlet sudah lengkap (endpoint belum di tambahkan)
+next update:
+- penambahan endpoint regist dan menambahkan data xtall cincin
+```
+
 ### Base URL:
 
 ```
@@ -14,10 +22,9 @@ https://rest-api-toram-online.vercel.app/xtall
 
 ### Endpoints
 
-1. GET `/xtall` 
+1. GET `/xtall`
 
-Mengambil semua data xtall dengan fitur pagination, pencarian, dan filter
-   berdasarkan tipe.
+Mengambil semua data xtall dengan fitur pagination, pencarian, dan filter berdasarkan tipe.
 
 ###### Query Parameters:
 
@@ -60,7 +67,7 @@ GET /xtall?page=2&limit=5&type=armor&search=mana
 
 ---
 
-2. GET `/xtall/:id` 
+2. GET `/xtall/:id`
 
 Deskripsi: Mengambil satu data xtall berdasarkan `id.`
 
@@ -89,7 +96,7 @@ GET /xtall/3
 }
 ```
 
-3. GET `/xtall/name/:name` 
+3. GET `/xtall/name/:name`
 
 Deskripsi: Mencari xtall berdasarkan name (mirip/tidak case-sensitive).
 
@@ -114,8 +121,11 @@ GET /xtall/name/xtal
 	}
 }
 ```
+
 ---
+
 ### Catatan
+
 - Semua pencarian nama menggunakan case-insensitive dan partial match (ILIKE '%name%').
 
 - Endpoint masih bersifat read-only, tidak ada POST/PUT/DELETE.
