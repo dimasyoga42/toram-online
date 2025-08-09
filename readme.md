@@ -8,6 +8,7 @@ Supabase
 update log:
 - 9-08-2025 data xtall senjata, armor, topi sudah lengkap
 - 9-08-2025 data registlet sudah lengkap (endpoint belum di tambahkan)
+- 9-08-2025 penghapusan endpoint pencarian berdasarkan id
 next update:
 - penambahan endpoint regist dan menambahkan data xtall cincin
 ```
@@ -67,7 +68,7 @@ GET /xtall?page=2&limit=5&type=armor&search=mana
 
 ---
 
-2. GET `/xtall/:id`
+2. GET `/xtall/:id` (delete)
 
 Deskripsi: Mengambil satu data xtall berdasarkan `id.`
 
