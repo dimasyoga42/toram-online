@@ -71,7 +71,7 @@ regist.get("/regist/name/:name", async (req, res) => {
 
 		return res.json({
 			success: true,
-			data,
+			data: data,
 		});
 	} catch (err) {
 		console.error(err);
