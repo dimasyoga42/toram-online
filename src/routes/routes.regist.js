@@ -55,7 +55,7 @@ regist.get("/regist/name/:name", async (req, res) => {
 
 		const { data, error } = await supabase
 			.from("regist")
-			.select("name, effect, max_lv, levels_studied")
+			.select("*")
 			.ilike("name", `%${name}%`);
 
 		if (error) {
