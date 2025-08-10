@@ -9,6 +9,7 @@ update log:
 - 9-08-2025 data xtall senjata, armor, topi sudah lengkap
 - 9-08-2025 data registlet sudah lengkap (endpoint belum di tambahkan)
 - 9-08-2025 penghapusan endpoint pencarian berdasarkan id
+- 10-08-2025 data xtall lengkap
 next update:
 - penambahan endpoint regist dan menambahkan data xtall cincin
 ```
