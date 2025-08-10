@@ -53,10 +53,7 @@ regist.get("/regist/name/:name", async (req, res) => {
 	try {
 		const { name } = req.params;
 
-		const { data, error } = await supabase
-			.from("regist")
-			.select("*")
-			.ilike("name", `%${name}%`);
+		const { data, error } = await supabase.from("regist").select("*").ilike("name", `%${name}%`);
 
 		if (error) {
 			if (error.code === "PGRST116") {
