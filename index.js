@@ -5,6 +5,7 @@ import cors from "cors";
 import { validateXtallInput } from "./src/middleware/validation.js";
 import xtall from "./src/routes/routes.main.js";
 import regist from "./src/routes/routes.regist.js";
+import ability from "./src/routes/ability.route.js";
 
 dotenv.config();
 
@@ -17,7 +18,7 @@ app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use("/", xtall);
 app.use("/", regist);
-
+app.use("/", ability);
 app.use((err, req, res, next) => {
 	console.error("Unhandled error:", err.stack);
 	res.status(500).json({
