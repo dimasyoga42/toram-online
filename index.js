@@ -6,7 +6,8 @@ import { validateXtallInput } from "./src/middleware/validation.js";
 import xtall from "./src/routes/routes.main.js";
 import regist from "./src/routes/routes.regist.js";
 import ability from "./src/routes/ability.route.js";
-
+import item from "./src/routes/item.route.js";
+import appview from "./src/routes/appview.js";
 dotenv.config();
 
 const supabase = createClient(process.env.LINKDATABASE, process.env.APIKEY);
@@ -19,33 +20,35 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", xtall);
 app.use("/", regist);
 app.use("/", ability);
+app.use("/", item);
+app.use("/", appview)
 app.use((err, req, res, next) => {
-	console.error("Unhandled error:", err.stack);
-	res.status(500).json({
-		success: false,
-		message: "Internal server error",
-	});
+  console.error("Unhandled error:", err.stack);
+  res.status(500).json({
+    success: false,
+    message: "Internal server error",
+  });
 });
 
 app.use((req, res) => {
-	res.status(404).json({
-		success: false,
-		message: "Route not found",
-	});
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
 });
 
 process.on("SIGTERM", () => {
-	console.log("SIGTERM received, shutting down gracefully");
-	process.exit(0);
+  console.log("SIGTERM received, shutting down gracefully");
+  process.exit(0);
 });
 
 process.on("SIGINT", () => {
-	console.log("SIGINT received, shutting down gracefully");
-	process.exit(0);
+  console.log("SIGINT received, shutting down gracefully");
+  process.exit(0);
 });
 
 // Start server
 app.listen(PORT, () => {
-	console.log(`🚀 Server running on port: ${PORT}`);
-	console.log(`📊 Health check: http://localhost:${PORT}/health`);
+  console.log(`🚀 Server running on port: ${PORT}`);
+  console.log(`📊 Health check: http://localhost:${PORT}/health`);
 });
